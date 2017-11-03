@@ -8,11 +8,10 @@ Devise.setup do |config|
   # by default. You can change it below and use your own secret key.
   # config.secret_key = 'd96b2b17211c236bcd1c12e07f0e51f010d4e564ad3bfd2d0cbf443a157d69a62d91bf3663e951240882aba3b2a704fcf92b0ed92c614226b3856a2fda67a3d3'
 
-  # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'Kevin Lai @ Code Academy <kevin.km.lai@gmail.com>'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -136,7 +135,7 @@ Devise.setup do |config|
   # initial account confirmation) to be applied. Requires additional unconfirmed_email
   # db field (see migrations). Until confirmed, new email is stored in
   # unconfirmed_email column, and copied to email column on successful confirmation.
-  config.reconfirmable = true
+  config.reconfirmable = false
 
   # Defines which key will be used when confirming an account
   # config.confirmation_keys = [:email]
@@ -261,17 +260,10 @@ Devise.setup do |config|
   #   manager.default_strategies(scope: :user).unshift :some_external_strategy
   # end
 
-  # ==> Mountable engine configurations
-  # When using Devise inside an engine, let's call it `MyEngine`, and this engine
-  # is mountable, there are some extra configurations to be taken into account.
-  # The following options are available, assuming the engine is mounted as:
-  #
-  #     mount MyEngine, at: '/my_engine'
-  #
-  # The router that invoked `devise_for`, in the example above, would be:
-  # config.router_name = :my_engine
-  #
-  # When using OmniAuth, Devise cannot automatically set OmniAuth path,
-  # so you need to do it manually. For the users scope, it would be:
-  # config.omniauth_path_prefix = '/my_engine/users/auth'
+
+
+  config.omniauth :facebook, '150595305557157', 'c6da42d9c7db9fe3e3e1ade97a758613', scope: 'email', info_fields: 'email, name'
+
+  # config.omniauth :facebook, '150595305557157', 'c6da42d9c7db9fe3e3e1ade97a758613'
+  # ,callback_url: "http://localhost:3000/users/auth/facebook/callback"
 end
