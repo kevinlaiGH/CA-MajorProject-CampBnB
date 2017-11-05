@@ -7,27 +7,10 @@ class User < ApplicationRecord
 
   validates :fullname, presence: true, length: {maximum: 50}
 
-  #When we run this function
-  # def self.from_omniauth(auth)
-  #   #if you can find that email in the database
-  #     user = User.where(email: auth.info.email).first
-  #
-  #     if user
-  #       return user
-  #     else
-  #     #otherwise, we will just creative a new user
-  #       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-  #         user.email = auth.info.email
-  #         user.password = Devise.friendly_token[0,20]
-  #         user.fullname = auth.info.name
-  #         user.image = auth.info.image
-  #         user.uid = auth.uid
-  #         user.provider = auth.provider
-  #
-  #         user.skip_confirmation!
-  #       end
-  #     end
-  # end
+  #One user can have one or more accommodations to rent out
+  has_many :accommodations
+
+
   
   def self.from_omniauth(auth)
     user = User.where(email: auth.info.email).first

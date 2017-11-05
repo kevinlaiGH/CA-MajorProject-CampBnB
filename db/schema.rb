@@ -10,7 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171103025938) do
+ActiveRecord::Schema.define(version: 20171105020135) do
+
+  create_table "accommodations", force: :cascade do |t|
+    t.string "land_type"
+    t.string "accommodation_type"
+    t.integer "area"
+    t.integer "capacity"
+    t.string "listing_name"
+    t.text "summary"
+    t.string "address"
+    t.boolean "is_tv"
+    t.boolean "is_kitchen"
+    t.boolean "is_air"
+    t.boolean "is_heating"
+    t.boolean "is_internet"
+    t.integer "price"
+    t.boolean "active"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_accommodations_on_user_id"
+  end
+
+  create_table "lands", force: :cascade do |t|
+    t.string "listing_type"
+    t.string "accommodate"
+    t.integer "area"
+    t.integer "capacity"
+    t.string "listing_name"
+    t.text "summary"
+    t.string "address"
+    t.boolean "is_tv"
+    t.boolean "is_kitchen"
+    t.boolean "is_air"
+    t.boolean "is_heating"
+    t.boolean "is_internet"
+    t.integer "price"
+    t.boolean "active"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_lands_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

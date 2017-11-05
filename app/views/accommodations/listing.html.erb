@@ -1,0 +1,65 @@
+<div class="row">
+
+  <div class="col-md-3"
+  <%= render 'accommodation_menu' %>
+
+  </div>
+
+  <div class="col-md-9">
+    <div class="panel panel-default">
+
+      <div class="panel-heading">
+        Listing
+      </div>
+
+      <div class="panel-body">
+        <div class="container">
+          <%= form_for @accommodation do |f| %>
+
+          <div class="row">
+            <div class="col-md-4 select">
+              <div class="form-group">
+                <label> Land type</label>
+                <%= f.select :land_type, [["Apartment", "Apartment"], ["House", "House"], ["bnb", "bnb"]],
+                              id: "land_type", prompt: "Select...", class: "form-control" %>
+              </div>
+            </div>
+
+            <div class="col-md-4 select">
+              <div class="form-group">
+                <label> Accommodation type</label>
+                <%= f.select :accommodation_type, [["Apartment", "Apartment"], ["House", "House"], ["bnb", "bnb"]],
+                              id: "accommodation_type", prompt: "Select...", class: "form-control" %>
+              </div>
+            </div>
+
+            <div class="col-md-4 select">
+              <div class="form-group">
+                <label> Area </label>
+                <%= f.select :area, [["Apartment", "Apartment"], ["House", "House"], ["bnb", "bnb"]],
+                              id: "area", prompt: "Select...", class: "form-control" %>
+              </div>
+            </div>
+
+            <div class="col-md-4 select">
+              <div class="form-group">
+                <label> Capacity </label>
+                <%= f.select :capacity, [["Apartment", "Apartment"], ["House", "House"], ["bnb", "bnb"]],
+                              id: "capacity", prompt: "Select...", class: "form-control" %>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <%= f.submit "Save", class: "btn btn-normal" %>
+          </div>
+
+          <%= end %>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
