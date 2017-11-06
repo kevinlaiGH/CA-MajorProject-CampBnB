@@ -78,7 +78,7 @@ before_action :authenticate_user!, except: [:show]
     end
 
     def accommodation_params
-# whenever you want to crete/ update a room, you need to permit which attribute you
+# whenever you want to crete/ update accommodation, you need to permit which attribute you
 # allow users to update/edit/create
       params.require(:accommodation).permit(:land_type, :accommodation_type, :area, :capacity,
       :listing_name, :summary, :address, :is_tv, :is_kitchen, :is_air, :is_heating, :is_internet,
