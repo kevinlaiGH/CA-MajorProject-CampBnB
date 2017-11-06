@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20171105020135) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "accommodations", force: :cascade do |t|
     t.string "land_type"
     t.string "accommodation_type"
@@ -27,31 +30,10 @@ ActiveRecord::Schema.define(version: 20171105020135) do
     t.boolean "is_internet"
     t.integer "price"
     t.boolean "active"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_accommodations_on_user_id"
-  end
-
-  create_table "lands", force: :cascade do |t|
-    t.string "listing_type"
-    t.string "accommodate"
-    t.integer "area"
-    t.integer "capacity"
-    t.string "listing_name"
-    t.text "summary"
-    t.string "address"
-    t.boolean "is_tv"
-    t.boolean "is_kitchen"
-    t.boolean "is_air"
-    t.boolean "is_heating"
-    t.boolean "is_internet"
-    t.integer "price"
-    t.boolean "active"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_lands_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -69,8 +51,8 @@ ActiveRecord::Schema.define(version: 20171105020135) do
     t.datetime "updated_at", null: false
     t.string "fullname"
     t.string "confirmation_token"
-    t.time "confirmed_at"
-    t.time "confirmation_sent_at"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
     t.string "provider"
     t.string "uid"
     t.string "image"
@@ -79,4 +61,5 @@ ActiveRecord::Schema.define(version: 20171105020135) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "accommodations", "users"
 end
