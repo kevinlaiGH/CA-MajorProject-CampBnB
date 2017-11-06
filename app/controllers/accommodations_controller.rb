@@ -7,6 +7,8 @@ before_action :set_accommodation, except: [:index, :new, :create]
   # except show, you can view the accommodation without logging in, its public to everyone
 before_action :authenticate_user!, except: [:show]
 
+before_action :is_authorised, only: [:listing, :pricing, :description, :photo_upload, :amenities, :location, :update]
+
   def index
     # at index we want to list all the accommodations belong to the user,
     # so we create a new variable name accommodations
@@ -50,6 +52,7 @@ before_action :authenticate_user!, except: [:show]
   end
 
   def photo_upload
+    @photos = @accommodation.photos
   end
 
   def amenities
@@ -77,6 +80,11 @@ before_action :authenticate_user!, except: [:show]
       @accommodation = Accommodation.find(params[:id])
     end
 
+# this redirects users back to the homepage so they cant change the information
+    def is_authorised
+      redirect_to root_path, alert: "You don't have permission" unless current_user.id == @accommodation.user_id
+    end
+
     def accommodation_params
 # whenever you want to crete/ update accommodation, you need to permit which attribute you
 # allow users to update/edit/create
@@ -84,5 +92,4 @@ before_action :authenticate_user!, except: [:show]
       :listing_name, :summary, :address, :is_tv, :is_kitchen, :is_air, :is_heating, :is_internet,
       :price, :active)
     end
-
 end
