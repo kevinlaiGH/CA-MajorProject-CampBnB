@@ -35,3 +35,6 @@ gem 'devise', '~> 4.2'
 gem 'jquery-rails'
 gem 'omniauth', '~> 1.6'
 gem 'omniauth-facebook', '~> 4.0'
+
+gem 'sqlite3', group: :development
+gem 'pg', '0.18.1', group: :production
