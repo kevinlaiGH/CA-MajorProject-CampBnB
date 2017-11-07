@@ -9,9 +9,10 @@ class User < ApplicationRecord
 
   #One user can have one or more accommodations to rent out
   has_many :accommodations
+  has_many :reservations
 
 
-  
+
   def self.from_omniauth(auth)
     user = User.where(email: auth.info.email).first
 
