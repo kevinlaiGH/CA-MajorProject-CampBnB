@@ -3,15 +3,15 @@
 one:
   user: one
   accommodation: one
-  start_date: 2017-11-07 17:49:46
-  end_date: 2017-11-07 17:49:46
+  start_date: 2017-11-07 18:50:23
+  end_date: 2017-11-07 18:50:23
   price: 1
   total: 1
 
 two:
   user: two
   accommodation: two
-  start_date: 2017-11-07 17:49:46
-  end_date: 2017-11-07 17:49:46
+  start_date: 2017-11-07 18:50:23
+  end_date: 2017-11-07 18:50:23
   price: 1
   total: 1
