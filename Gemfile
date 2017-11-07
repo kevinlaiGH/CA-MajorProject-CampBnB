@@ -14,10 +14,9 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
-group :development, :test do
+gem 'dotenv-rails', groups: [:development, :test]
 
-  # gem 'dotenv-rails'
-  ##################
+group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
@@ -38,5 +37,5 @@ gem 'jquery-rails'
 gem 'omniauth', '~> 1.6'
 gem 'omniauth-facebook', '~> 4.0'
 gem 'pg'
-gem "paperclip", "~> 5.0.0"
-# gem 'carrierwave', '~> 1.0'
+gem "paperclip", '~> 5.0.0'
+gem 'geocoder', '~>1.4'

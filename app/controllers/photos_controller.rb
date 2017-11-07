@@ -14,4 +14,20 @@ class PhotosController < ApplicationController
     end
 
   end
+
+#delete photo upload
+  def destroy
+#this is going to find the photos that you want base on id
+    @photo = Photo.find(params[:id])
+    accommodation = @photo.accommodation
+
+#and then delete it
+    @photo.destroy
+#and then guess all of the remains of those belong to the id
+    @photos = Photo.where(accommodation_id: accommodation_id)
+
+#returns to/render destroy.js.erb
+    respond_to :js
+
+  end
 end

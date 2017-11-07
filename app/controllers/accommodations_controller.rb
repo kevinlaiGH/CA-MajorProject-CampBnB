@@ -23,7 +23,7 @@ before_action :is_authorised, only: [:listing, :pricing, :description, :photo_up
 
   def create
     # for create, we going to pass the accommods params
-    @accommodation = current_user.accommodations(accommodation_params)
+    @accommodation = current_user.accommodations.build(accommodation_params)
     if @accommodation.save
       redirect_to listing_accommodation_path(@accommodation), notice: "Saved..."
     else
@@ -41,6 +41,7 @@ before_action :is_authorised, only: [:listing, :pricing, :description, :photo_up
   end
 
   def show
+    @photos = @accommodation.photos
   end
 
   def pricing
