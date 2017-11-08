@@ -33,4 +33,7 @@ Rails.application.routes.draw do
       #only allow user to create reservation
     resources :reservations, only: [:create]
   end
+
+  resources :guest_reviews, only: [:create, :destroy]
+  resources :host_reviews, only: [:create, :destroy]
 end

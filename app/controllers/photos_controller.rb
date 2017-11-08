@@ -5,9 +5,8 @@ class PhotosController < ApplicationController
 
     if params[:images]
       params[:images].each do |img|
-        @accommodation.photos.create(accommodation: img)
+        @accommodation.photos.create(image: img)
       end
-    end
 
       @photos = @accommodation.photos
       redirect_back(fallback_location: request.referer, notice: "Saved...")
