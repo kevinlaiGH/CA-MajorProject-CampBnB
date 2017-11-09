@@ -1,13 +1,13 @@
 class AccommodationsController < ApplicationController
 
   #before you run any action below , just run set_accommodation first
-before_action :set_accommodation, except: [:index, :new, :create]
+  before_action :set_accommodation, except: [:index, :new, :create]
 
   # we need user to login for updating listing/pricing/description
   # except show, you can view the accommodation without logging in, its public to everyone
-before_action :authenticate_user!, except: [:show]
+  before_action :authenticate_user!, except: [:show]
 
-before_action :is_authorised, only: [:listing, :pricing, :description, :photo_upload, :amenities, :location, :update]
+  before_action :is_authorised, only: [:listing, :pricing, :description, :photo_upload, :amenities, :location, :update]
 
   def index
     # at index we want to list all the accommodations belong to the user,
@@ -18,7 +18,7 @@ before_action :is_authorised, only: [:listing, :pricing, :description, :photo_up
 
   def new
     # when a user open a new page, it allows user to craete a new accommodation
-    @accommodation = current_user.accommodations.build
+    @accommodation = current_user.accommodations.new
   end
 
   def create
@@ -81,14 +81,14 @@ before_action :is_authorised, only: [:listing, :pricing, :description, :photo_up
       @accommodation = Accommodation.find(params[:id])
     end
 
-# this redirects users back to the homepage so they cant change the information
+    # this redirects users back to the homepage so they cant change the information
     def is_authorised
       redirect_to root_path, alert: "You don't have permission" unless current_user.id == @accommodation.user_id
     end
 
     def accommodation_params
-# whenever you want to crete/ update accommodation, you need to permit which attribute you
-# allow users to update/edit/create
+      # whenever you want to crete/ update accommodation, you need to permit which attribute you
+      # allow users to update/edit/create
       params.require(:accommodation).permit(:land_type, :accommodation_type, :area, :capacity,
       :listing_name, :summary, :address, :is_tv, :is_kitchen, :is_air, :is_heating, :is_internet,
       :price, :active)

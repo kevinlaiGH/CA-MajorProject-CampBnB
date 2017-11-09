@@ -20,7 +20,7 @@
             <div class="col-md-4 select">
               <div class="form-group">
                 <label> Land type</label>
-                <%= f.select :land_type, [["Apartment", "Apartment"], ["House", "House"], ["bnb", "bnb"]],
+                <%= f.select :land_type, [["Oceanfront", "Oceanfront"], ["Mountains", "Mountains"], ["Vineyards", "Vineyards"], ["Hiking Getaways", "Hiking Getaways"], ["Farms", "Farms"]],
                               id: "land_type", prompt: "Select...", class: "form-control" %>
               </div>
             </div>
@@ -28,8 +28,8 @@
             <div class="col-md-4 select">
               <div class="form-group">
                 <label> Accommodation type</label>
-                <%= f.select :accommodation_type, [["Apartment", "Apartment"], ["House", "House"], ["bnb", "bnb"]],
-                              id: "accommodation_type", prompt: "Select...", class: "form-control" %>
+                <%= f.select :accommodation_type, [["Huts", "Huts"], ["Villas", "Villas"], ["Cabins", "Cabins"], ["Tents", "Tents"], ["Treehouses", "Treehouses"], ["Pods", "Pods"]],
+                id: "accommodation_type", prompt: "Select...", class: "form-control" %>
               </div>
             </div>
 
@@ -43,8 +43,8 @@
 
             <div class="col-md-4 select">
               <div class="form-group">
-                <label> Capacity </label>
-                <%= f.select :capacity, [["Apartment", "Apartment"], ["House", "House"], ["bnb", "bnb"]],
+                <label> Maximum Capacity </label>
+                <%= f.select :capacity, [["2 people", "2 people"],["5 people", "5 people"], ["10 people", "10 people"], ["15 people", "15 people"]],
                               id: "capacity", prompt: "Select...", class: "form-control" %>
               </div>
             </div>
