@@ -1,16 +1,17 @@
-<% accommodations.each do |accommodation| %>
-    <div class="col-md-4">
-      <div class="panel panel-default">
-        <div class="panel-heading preview">
-          <%= image_tag accommodation.cover_photo(:medium) %>
-        </div>
-        <div class="panel-body">
-          <%= link_to accommodation.listing_name, accommodation %><br/>
-          $<%= accommodation.price %> - <%= accommodation.land_type %> - <%= pluralize(accommodation.area, "area") %>
-          <div id="star_<%= accommodation.id %>"></div> <%= pluralize(accommodation.average_rating, "review") %>
+<div class= "row">
+  <% accommodations.each do |accommodation| %>
+      <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading preview">
+            <%= image_tag accommodation.cover_photo(:medium) %>
+          </div>
+          <div class="panel-body">
+            <%= link_to accommodation.listing_name, accommodation %><br/>
+            $<%= accommodation.price %> - <%= accommodation.land_type %> - <%= pluralize(accommodation.area, "area") %>
+            <div id="star_<%= accommodation.id %>"></div> <%= pluralize(accommodation.average_rating, "review") %>
+          </div>
         </div>
       </div>
-    </div>
 
     <script>
       $('#star_<%= accommodation.id %>').raty({

@@ -42,8 +42,7 @@
       </div>
 
       <div class="row text-center">
-        <div class="col-md-3"><%= @accommodation.home_type %></div>
-        <div class="col-md-3"><%= pluralize(@accommodation.accommodate, "Guest") %></div>
+        <div class="col-md-3"><%= @accommodation.land_type %></div>
         <div class="col-md-3"><%= pluralize(@accommodation.area, "Area") %></div>
         <div class="col-md-3"><%= pluralize(@accommodation.capacity, "Capacity") %></div>
       </div>
@@ -137,6 +136,6 @@
     <!-- RIGHT PANEL -->
     <div class="col-md-4">
       <!-- Reservation Form -->
-      <%= render 'reservations/form' %>
+      <%= render partial: 'reservations/form', locals: {accommodation: @accommodation} %>
     </div>
   </div>

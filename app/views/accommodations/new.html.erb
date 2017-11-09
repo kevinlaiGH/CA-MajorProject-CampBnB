@@ -28,7 +28,7 @@
           <div class="col-md-4 select">
             <div class="form-group">
               <label>Area</label>
-              <%= f.select :area, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]],
+              <%= f.select :area, [["Chocolate Factory", "Chocolate Factory"], ["Wine Tasting", "Wine Tasting"], ["Bush Walking", "Bushwalking"]],
                             id: "area", prompt: "Select...", class: "form-control" %>
             </div>
           </div>
@@ -36,7 +36,7 @@
           <div class="col-md-4 select">
             <div class="form-group">
               <label>Maximum Capacity</label>
-              <%= f.select :capacity, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]],
+              <%= f.select :capacity, [["2 people", "2 people"],["5 people", "5 people"], ["10 people", "10 people"], ["15 people", "15 people"]],
               id: "capacity", prompt: "Select...", class: "form-control" %>
             </div>
           </div>

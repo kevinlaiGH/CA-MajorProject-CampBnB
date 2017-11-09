@@ -6,7 +6,7 @@ Rails.application.routes.draw do
               path: '',
               path_names: {sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'registration'},
               controllers: {omniauth_callbacks: 'omniauth_callbacks'}
-              
+
 
   resources :users, only: [:show]
 
@@ -26,4 +26,11 @@ Rails.application.routes.draw do
 
   resources :guest_reviews, only: [:create, :destroy]
   resources :host_reviews, only: [:create, :destroy]
+
+  get 'search' => 'page#search'
+
+  #---------PRIVATE MESSAGES-------
+  resources :conversations, only: [:index, :create] do
+    resources :messages, only: [:index, :create]
+  end
 end
