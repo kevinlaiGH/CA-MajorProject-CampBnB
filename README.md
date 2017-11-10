@@ -1,24 +1,19 @@
-# README
+# CampBnB
+Create a two-sided-marketplace to connect guests and hosts in one platform
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Problem
+1. As travellers who would love to camp to other places, they may not have the time to do the research, they want to know what places are available
+2. They would like to see reviews and recommendations about camping area.
+3. As hosts, they would love to rent out my unused space for extra revenue
 
-Things you may want to cover:
+## Solution
+Creating a one-stop platform for people to find new places to camp.
+Allowing guests to review, rate and provide recommendations for other guests
+Allowing hosts to provide more information about the place they are hosting
 
-* Ruby version
+- [x] User Stories
+- [x] ERD
+- [x] Wireframes
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Entity Relationship Diagram
+![alt Entity Relationship Diagram](/public/erd1.png?raw=true)
