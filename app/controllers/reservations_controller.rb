@@ -24,3 +24,4 @@ class ReservationsController < ApplicationController
     end
     redirect_to accommodation
   end
+end
