@@ -17,3 +17,9 @@ Allowing hosts to provide more information about the place they are hosting
 
 ## Entity Relationship Diagram
 ![alt Entity Relationship Diagram](/public/erd1.png?raw=true)
+
+## User Stories
+![alt User Stories](/public/userstories.png?raw=true)
+
+## User Journey Diagram
+![alt User Journey Diagram](/public/userroadmap.png?raw=true)
